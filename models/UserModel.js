@@ -12,5 +12,6 @@ image:String,
 age:Number,
 city:String
 });
+
 var UserModel = mongoose.model('UserModel', UserModelSchema);
 module.exports = UserModel;

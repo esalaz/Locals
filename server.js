@@ -17,8 +17,22 @@ app.use(function(req, res, next) {
 
 //basic root route
 app.get('/',function(req,res){
-  console.log('do you stuff here')
+  res.send('Reserved for Log In / Sign Up Page')
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
