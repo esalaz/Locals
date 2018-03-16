@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var Schema = mongoose.Schema,
+
+// NEW ADDITION
+passportLocalMongoose = require('passport-local-mongoose');
 
 UserModelSchema = new Schema({
 first_name:String,
