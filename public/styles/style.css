@@ -1,0 +1,111 @@
+/*-----------------------------------------------------------------
+                        COVERR BACKGROUND, TITLE, & INFO 
+-------------------------------------------------------------------*/
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+    background-attachment: fixed;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    z-index: 0;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+.title{
+    margin-top: 14%;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+}
+.info{
+    text-align: center;
+    color: white;
+}
+
+/*-------------------------------------------------------------------------
+                            FORM STYLING
+---------------------------------------------------------------------------*/
+
+body {
+  box-sizing: border-box;
+  background-color: gray;
+}
+.wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #FFF;
+  border-color: blue;
+  margin-top: 3em;
+}
+.tab {
+  font-size: 20px;
+  border-color: blue;;
+  background: #FFF;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0 auto;
+  padding: 1em 3.424em;
+}
+.tab:focus {
+  outline: none;
+}
+.tabs {
+  display: flex;
+}
+.content {
+  background: #FFF;
+  display: none;
+  padding: 15px;
+}
+.button {
+  width: 100%;
+}
+.input {
+  width: 100%;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.btn {
+  margin-top: 1.5em;
+}
+label {
+  padding-top: 8px;
+}

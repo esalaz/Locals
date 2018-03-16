@@ -17,7 +17,8 @@ app.use(function(req, res, next) {
 
 //basic root route
 app.get('/',function(req,res){
-  console.log('do you stuff here')
+  console.log('yoooo')
+  res.render(__dirname + '/views/signup.html.ejs')
   });
 
 

@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- set viewport to device width to make site responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap css -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- custom script -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/styles/style.css">
+
+</head>
+    <body>
+      <!-- COVERR BACKGROUND TEXT -->
+            <div class="homepage-hero-module">
+              <div class="video-container">
+                <div class="titleInfoWrapper">
+                    <h1 class='title'>LOCALS</h1>
+                    <h4 class='info'>Planning a trip and you want to know the best activities around?
+                      <br>
+                      Travelers will join awesome locals and tour your vaction spot together
+                      <br>
+                      Showing travelers a great time in many cities!
+                      </h4> 
+                  </div>
+                      
+        <!-- LOGIN/SIGNUP FORM -->
+                    <div class="wrapper">
+                        <div class="tabs">
+                          <button onclick="openMe('first')" class="tab">Sign Up</button>
+                          <button onclick="openMe('second')" class="tab">Log In</button>
+                        </div>
+                        <div id="first" class="content form-group">
+                          <form class="signup form-group" action="/signup" method="post">
+                            <label for="">Email</label>
+                            <input class="input form-control" type="text" name="email" placeholder="Email">
+                            <label for="">Password</label>
+                            <input class="input form-control" type="text" name="password" placeholder="Password">
+                            <label for="">Confirm Password</label>
+                            <input class="input form-control" type="text" name="password" placeholder="Confirm Password">
+                            <label for="">Who are you?</label>
+                            <select class="select form-control" name="">
+                              <option value="Traveler">Traveler</option>
+                              <option value="Local">Local</option>
+                            </select>
+                            <input class="button btn btn-primary" type="button" name="Submit" value="Sign Up">
+                          </form>
+                        </div>
+                        <div id="second" class="content">
+                          <form class="login" action="/login" method="post">
+                            <label for="">Email</label>
+                            <input class="input form-control" type="text" name="email" placeholder="Email">
+                            <label for="">Password</label>
+                            <input class="input form-control" type="text" name="password" placeholder="Password">
+                            <input class="button btn btn-primary" type="button" name="Submit" value="Log In">
+                          </form>
+                        </div>
+                    </div>
+
+          <!-- COVERR VIDEO AND PICTURES -->
+                        <div class="filter"></div>
+                          <video autoplay loop class="fillWidth">
+                          <source src="/images/Big-Apple/MP4/Big-Apple.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                          <source src="/images/Big-Apple/WEBM/Big-Apple.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                          </video>
+                            <div class="poster hidden">
+                                <img src="/images/Big-Apple/Snapshots/Big-Apple.jpg" alt="">
+                            </div>
+                  </div>
+              </div>
+    </body>
+</html>
+
+
