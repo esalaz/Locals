@@ -14,3 +14,14 @@ city:String
 });
 var UserModel = mongoose.model('UserModel', UserModelSchema);
 module.exports = UserModel;
+
+//FACEBOOK_API_KEY
+module.exports = mongoose.model('User',{
+  fb:{
+    id:STRING,
+    access_token: String,
+    firstName: String,
+    lastName: String,
+    email: String
+  }
+});
