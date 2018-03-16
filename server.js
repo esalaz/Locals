@@ -17,11 +17,11 @@ app.use(function(req, res, next) {
 
 //basic root route
 app.get('/',function(req,res){
-  console.log('do you stuff here')
+  console.log('do your stuff here');
   });
 
 
 
 app.listen(process.env.PORT || 3000,function(){
-  console.log('server running');
+  console.log('Running On Port 3000');
 });

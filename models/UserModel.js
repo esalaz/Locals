@@ -12,7 +12,7 @@ image:String,
 age:Number,
 city:String
 });
-var UserModel = mongoose.model('UserModel', UserModelSchema);
+var userModel = mongoose.model('userModel', UserModelSchema);
 module.exports = UserModel;
 
 //FACEBOOK_API_KEY
