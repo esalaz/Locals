@@ -6,26 +6,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="../public/styles/feed.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
   <body>
     <img class="logo" src="../public/images/logo-placeholder.png" alt="placeholder">
-    <nav class="navbar navbar-inverse container">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="#!" class="brand-logo">Logo Here</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn">Button</a></li>
+          <li><a class="waves-effect waves-light btn">Button <i class="material-icons right">cloud</i></a></li>
+          <li><a class="waves-effect waves-light btn-large">Large Button</a></li>
+        </ul>
+      </div>
     </nav>
     <h1>Locals Only</h1>
     <div id="map" class="container"></div>
@@ -35,40 +29,56 @@
     async defer></script>
 
     <div id="feed" class="container">
-      <div class="card text-left bottom-space">
-        <div class="card-header">Something here</div>
-        <div class="card-body">
-          <h5 class="card-title">Locals Name</h5>
-          <p class="card-text">Bio explaining why they should be your 'local' guide</p>
-          <button data-toggle="collapse" data-target="#ex-content">View More</button>
-          <div id="ex-content" class="collapse">
-            Lorem ipsum dolor text....
-          </div>
-        </div>
-        <div class="profile-img-feed">
-          <img src="" alt="">
 
-        </div>
-        <div class="card-footer text-muted">San Francisco</div>
-      </div>
-      <div class="card text-left bottom-space">
-        <div class="card-header">Something here</div>
-        <div class="card-body">
-          <h5 class="card-title">Locals Name</h5>
-          <p class="card-text">Bio explaining why they should be your 'local' guide</p>
+      <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="../public/images/image-placeholder.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+              </span>
+            </div>
+          </div>
           <button data-toggle="collapse" data-target="#ex-content">View More</button>
           <div id="ex-content" class="collapse">
             Lorem ipsum dolor text....
           </div>
+        </div>
+      </div>
+      <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="../public/images/image-placeholder.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+              </span>
+            </div>
+          </div>
+          <button data-toggle="collapse" data-target="#ex-content">View More</button>
+          <div id="ex-content" class="collapse">
+            Lorem ipsum dolor text....
+          </div>
+        </div>
+      </div>
+
         </div>
         <div class="card-footer text-muted">San Francisco</div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <!-- Script for google map markers -->
     <script type="text/javascript" src="../public/scripts/mapsMarkers.js"></script>
+    <!-- materialize-js -->
+
+
   </body>
 </html>
