@@ -38,6 +38,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
 // HOMEPAGE ROUTE
 app.get("/", function (req, res) {
       res.render("index", {user: req.user});
