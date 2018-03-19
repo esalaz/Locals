@@ -59,11 +59,16 @@ app.get('/feed', function(req, res) {
   res.render('feed')
 })
 
+// Render Profile Page - this breaks my App
+// app.get('/user/:id', function(req, res) {
+//   res.render('profile')
+// })
+
 // SIGNUP WORKING
 app.post("/signup", function (req, res) {
   console.log(req.body);
   User.register(new User({ username: req.body.username,
-                           // password: req.body.password,
+                           password: req.body.password,
                            name: req.body.name,
                            isLocal: req.body.isLocal,
                            age: req.body.age,
@@ -136,26 +141,39 @@ app.put('/user/:id', function(req, res) {
           res.render('profile', {user: updatedUserSaved})
         }
       })
-
     }})
   })
 
-// LOGIN login - not working
+// DELETE - not working
+app.delete('/user/:id', function(res, req) {
+  console.log(req);
+  User.findByIdAndRemove(req.params.id, function(err, deletedUser) {
+    if (err) {
+      console.log("Error trying to delete post: " + err);
+    } else {
+    console.log("User Deleted Sucessfully");
+    res.redirect('/');
+  }
+  })
+})
+
+// LOGIN login
 app.post("/login", passport.authenticate("local"), function (req, res) {
   console.log(req);
   User.findOne({username: req.body.username}, function(err, succ){
     console.log("Error is: " + err);
     console.log("Success is: " + succ);
-    // succ.password doesnt exist
     if(req.body.password === succ.password) {
-      res.json({title:'Success Fully login'});
+      // Redirect! This is likely why delete isn't working
+      res.render('profile', {user: succ})
     }
     else{
-      res.json({title:'invalide password'});
+      res.sendStatus(404);
     }
   })
 })
 
+// STILL NEED A LOGOUT BUTTON
 app.get("/logout", function (req, res) {
   req.logout();
   res.redirect("/");

@@ -38,11 +38,18 @@
           <div class="form-group">
             Bio: <span><%= user.bio %></span>
           </div>
-          <form class="form-inline update-post" action="/user/<%= user._id %>/update" method="GET">
+          <form action="/user/<%= user._id %>/update" method="GET">
             <div class="form-group">
               <input type="submit" class="btn btn-block btn-primary" value="Edit">
             </div>
           </form>
+          <form action="/user/<%= user._id %>?_method=DELETE" method="POST">
+            <div class="form-group">
+              <input type="submit" class="btn btn-block btn-primary" value="DELETE">
+            </div>
+          </form>
+
+
       </div>
     </div>
   </div>
