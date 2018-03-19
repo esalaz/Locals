@@ -41,25 +41,29 @@ passport.deserializeUser(User.deserializeUser());
 
 // HOMEPAGE ROUTE
 app.get("/", function (req, res) {
-      res.render("index", {user: req.user});
+      res.render("index");
   });
 
+// Render signup page
 app.get("/signup", function (req, res) {
     res.render("signup");
   });
 
+// Render login page
+app.get("/login", function (req, res) {
+  res.render("login");
+});
+
+// Render Map
 app.get('/feed', function(req, res) {
   res.render('feed')
-})
-
-app.get('/user/:id', function(req, res) {
-  res.render('locals')
 })
 
 // SIGNUP WORKING
 app.post("/signup", function (req, res) {
   console.log(req.body);
   User.register(new User({ username: req.body.username,
+                           // password: req.body.password,
                            name: req.body.name,
                            isLocal: req.body.isLocal,
                            age: req.body.age,
@@ -67,51 +71,49 @@ app.post("/signup", function (req, res) {
                            bio: req.body.bio}), req.body.password,
       function () {
         passport.authenticate("local")(req, res, function() {
+          // If a traveler signs up, redirect to the feed
           if (req.body.isLocal === 'Traveler') {
           res.redirect('/feed');
         } else {
-          res.redirect('/profile/:id');
-          var localId = req.params.id
+          // If a local signs up, redirect to their profile
+          res.redirect(`/user/${req.user._id}`);
         }
-        });
-      }
+      })
+    }
   )
 });
 
-app.get("/login", function (req, res) {
-  res.render("login");
-});
+// SHOW (user profile) - working
+app.get('/user/:id', function(req, res) {
+  var userId = req.user._id;
+  User.findById(userId, function(err, succ) {
+    if (err) {
+      console.log("Error: " + err);
+    } else {
+      res.render('profile', {user: succ})
+    }})
+  })
 
-// LOGIN NOT WORKING
+// LOGIN login - not working
 app.post("/login", passport.authenticate("local"), function (req, res) {
   console.log(req);
-  User.findOne({username: req.body.username}), function(err, succ){
+  User.findOne({username: req.body.username}, function(err, succ){
     console.log("Error is: " + err);
     console.log("Success is: " + succ);
-    if(req.body.password === User.password) {
+    // succ.password doesnt exist
+    if(req.body.password === succ.password) {
       res.json({title:'Success Fully login'});
     }
     else{
       res.json({title:'invalide password'});
     }
-  }
+  })
 })
-// this won't work because they are not submitted traveler or local
-//   if (req.body.isLocal === 'Traveler') {
-//   res.send("Traveler");
-// } else {
-//   res.redirect('/profile/:id')
-// }
 
 app.get("/logout", function (req, res) {
   req.logout();
   res.redirect("/");
 });
-//
-// app.get("/user/:id", function (req, res) {
-// req.params.id
-//   res.render("travelprofile");
-// });
 
 // listen on port 3000
 app.listen(3000, function() {
