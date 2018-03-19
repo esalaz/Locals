@@ -19,40 +19,36 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-          <img src="<%= user.img %>" alt="">
+        <h2>Update your Profile</h2>
+        <br>
+        <form action="/user/<%= user._id %>?_method=PUT" method="POST">
           <div class="form-group">
-                Name: <span><%= user.name %></span>
+            <input type="text" name="name" class="form-control" value="<%= user.name %>" placeholder="Name" autofocus>
           </div>
           <div class="form-group">
-                Email: <span><%= user.username %></span>
+            <input type="email" name="username" class="form-control" value="<%= user.username %>">
           </div>
           <div class="form-group">
-              Local or Traveler: <span><%= user.isLocal %></span>
+            <select class="form-control" name="isLocal">
+              <option value="Traveler">Traveler</option>
+              <option value="Local">Local</option>
+            </select>
           </div>
           <div class="form-group">
-            Age: <span><%= user.age %></span>
+            <input type="number" name="age" class="form-control" placeholder="Age" value="<%= user.age %>">
           </div>
           <div class="form-group">
-              City: <span><%= user.city %></span>
+            <input type="text" name="city" class="form-control" placeholder="City" value="<%= user.city %>">
           </div>
           <div class="form-group">
-            Bio: <span><%= user.bio %></span>
+            <input type="text" name="bio" class="form-control" placeholder="Bio" value="<%= user.bio %>">
           </div>
-          <form class="form-inline update-post" action="/user/<%= user._id %>/update" method="GET">
-            <div class="form-group">
-              <input type="submit" class="btn btn-block btn-primary" value="Edit">
-            </div>
-          </form>
+          <div class="form-group">
+            <input type="submit" class="btn btn-block btn-primary" value="Update">
+          </div>
+        </form>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
 </body>
 </html>

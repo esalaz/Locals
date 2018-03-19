@@ -83,6 +83,13 @@ app.post("/signup", function (req, res) {
   )
 });
 
+// CRUD Routes
+// GET '/users' shows all users. Not using
+// POST '/users' create a user. Used in '/signup'
+// GET 'users/:id' show one user. DONE
+// PUT 'users/:id' update one user. DONE
+// DELETE 'users/:id' delete one user
+
 // SHOW (user profile) - working
 app.get('/user/:id', function(req, res) {
   var userId = req.user._id;
@@ -91,6 +98,45 @@ app.get('/user/:id', function(req, res) {
       console.log("Error: " + err);
     } else {
       res.render('profile', {user: succ})
+    }})
+  })
+
+// UPDATE PAGE FOR USER PROFILE
+app.get('/user/:id/update', function(req, res) {
+  var userId = req.user._id;
+  console.log(userId);
+  User.findById(userId, function(err, succ) {
+    if (err) {
+      console.log("Error: " + err);
+    } else {
+      res.render('update_profile', {user: succ})
+    }})
+})
+
+// SAVE UPDATES FOR USER PROFILE
+app.put('/user/:id', function(req, res) {
+  console.log("Hello, you just tried to update");
+  var userId = req.user._id;
+  User.findById(userId, function(err, foundUser) {
+    if (err) {
+      console.log("Error: " + err);
+    } else {
+      console.log("found user " + foundUser);
+      foundUser.username = req.body.username,
+      foundUser.name = req.body.name,
+      foundUser.isLocal = req.body.isLocal,
+      foundUser.age = req.body.age,
+      foundUser.city = req.body.city,
+      foundUser.bio = req.body.bio;
+      foundUser.save(function(err, updatedUserSaved) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log('User is Saved: ' + updatedUserSaved);
+          res.render('profile', {user: updatedUserSaved})
+        }
+      })
+
     }})
   })
 
