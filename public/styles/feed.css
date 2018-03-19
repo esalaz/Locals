@@ -1,0 +1,39 @@
+img{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Kaushan Script', cursive;
+}
+#map {
+   height: 400px;
+   width: 60em;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 20px;
+   margin-top: 20px;
+   background-color: grey;
+ }
+#map p{
+   color: red;
+}
+html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+#feed{
+  padding-left: 10em;
+  padding-right:10em;
+
+}
+.bottom-space{
+  margin-bottom: 2em;
+}
+.profile-img-feed{
+
+}
