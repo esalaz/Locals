@@ -48,16 +48,30 @@ app.get("/signup", function (req, res) {
     res.render("signup");
   });
 
+app.get('/feed', function(req, res) {
+  res.render('feed')
+})
+
+app.get('/user/:id', function(req, res) {
+  res.render('locals')
+})
+
 // SIGNUP WORKING
 app.post("/signup", function (req, res) {
   console.log(req.body);
-  User.register(new User({ username: req.body.username, }), req.body.password,
+  User.register(new User({ username: req.body.username,
+                           name: req.body.name,
+                           isLocal: req.body.isLocal,
+                           age: req.body.age,
+                           city: req.body.city,
+                           bio: req.body.bio}), req.body.password,
       function () {
         passport.authenticate("local")(req, res, function() {
           if (req.body.isLocal === 'Traveler') {
-          res.send("Traveler");
+          res.redirect('/feed');
         } else {
-          res.redirect('/profile/:id')
+          res.redirect('/profile/:id');
+          var localId = req.params.id
         }
         });
       }
@@ -94,7 +108,7 @@ app.get("/logout", function (req, res) {
   res.redirect("/");
 });
 //
-// app.get("/profile/:id", function (req, res) {
+// app.get("/user/:id", function (req, res) {
 // req.params.id
 //   res.render("travelprofile");
 // });
