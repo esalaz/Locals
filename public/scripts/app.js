@@ -4,7 +4,14 @@ console.log('yoooo')
 app.use(express.static(path.join(__dirname, 'client')));
 $( document ).ready(function() {
     $('select').material_select();
-});
+    // $('.carousel').carousel()
+
+    // $('.carousel').carousel('next');
+    // $('.carousel').carousel('next', 3); // Move next n times.
+
+    // $('.carousel.carousel-slider').carousel({fullWidth: true});
+    $('.slider').slider();
+  });
 
 
 function openMe(inside) {
