@@ -7,3 +7,34 @@ body {
  main {
    flex: 1 0 auto;
  }
+
+/* Moves slider back */
+.slider, .fullscreen{
+  z-index: -1;
+}
+
+.info{
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+.card{
+  height: 300px;
+  width: 400px;
+}
+
+.flexbox{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  margin-top: 48%;
+  margin-bottom: 3%;
+}
+
+.cardcontent{
+  text-align: center;
+}
+
+.card .card-title{
+  text-align: center;
+}

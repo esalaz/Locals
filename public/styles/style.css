@@ -8,16 +8,6 @@
     text-align: center;
     color: black;
 }
-.info{
-  z-index: 1;
-  text-align: center;
-  color: white;
-}
-
-/* Moves slider back */
-.slider, .fullscreen{
-  z-index: -1;
-}
 
 .brand-logo {
   font-family: 'Kaushan Script', cursive;
