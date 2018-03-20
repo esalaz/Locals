@@ -18,34 +18,35 @@
   <h1 class='title'>LOCALS</h1>
   <div class="container">
     <div class="row">
+
       <div class="col-md-12">
-          <img src="<%= user.img %>" alt="">
+  <img src="<%= user.img %>" alt="">
           <div class="form-group">
-                Name: <span><%= user.name %></span>
+                Name | <span><%= user.name %></span>
           </div>
           <div class="form-group">
-                Email: <span><%= user.username %></span>
+                Email | <span><%= user.username %></span>
           </div>
           <div class="form-group">
-              Local or Traveler: <span><%= user.isLocal %></span>
+              Local or Traveler | <span><%= user.isLocal %></span>
           </div>
           <div class="form-group">
-            Age: <span><%= user.age %></span>
+            Age | <span><%= user.age %></span>
           </div>
           <div class="form-group">
-              City: <span><%= user.city %></span>
+              City | <span><%= user.city %></span>
           </div>
           <div class="form-group">
-            Bio: <span><%= user.bio %></span>
+            Bio | <span><%= user.bio %></span>
           </div>
           <form action="/user/<%= user._id %>/update" method="GET">
-            <div class="form-group">
-              <input type="submit" class="btn btn-block btn-primary" value="Edit">
+            <div>
+              <input type="submit" class="btn btn-block btn-primary" value="Edit Profile">
             </div>
           </form>
           <form action="/user/<%= user._id %>?_method=DELETE" method="POST">
             <div class="form-group">
-              <input type="submit" class="btn btn-block btn-primary" value="DELETE">
+              <input type="submit" class="btn btn-block btn-primary" value="Delete Profile">
             </div>
           </form>
 
