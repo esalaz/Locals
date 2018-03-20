@@ -10,6 +10,8 @@ var express = require("express"),
   passport = require("passport"),
   LocalStrategy = require("passport-local").Strategy;
 
+
+
 // require Post model
 var db = require("./models"),
   User = db.User;
