@@ -3,7 +3,7 @@ var express = require("express"),
   app = express(),
   bodyParser = require("body-parser"),
   methodOverride = require("method-override"),
-
+  validate = require('express-validator')
   //  NEW ADDITIONS
   cookieParser = require("cookie-parser"),
   session = require("express-session"),
@@ -32,6 +32,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(validate(app, i18n));
 
 // Login system wont work without these
 passport.use(new LocalStrategy(User.authenticate()));
@@ -146,8 +147,7 @@ app.put('/user/:id', function(req, res) {
     }})
   })
 
-// DELETE - not working req.params is undefined. Maybe bc I'm rendering rathe than redirecting
-// Look at URLs for after login and signup
+// DELETE
 app.delete('/user/:id', function(req, res) {
   console.log(req);
   User.findByIdAndRemove(req.params.id, function(err, deletedUser) {
@@ -179,6 +179,10 @@ app.post("/login", passport.authenticate("local"), function (req, res) {
 app.get("/logout", function (req, res) {
   req.logout();
   res.redirect("/");
+});
+
+app.get("/message", function (req, res) {
+  res.render("messaging");
 });
 
 // listen on port 3000
