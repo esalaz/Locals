@@ -23,20 +23,33 @@ img{
 #map p{
    color: red;
 }
+
 div#map{
   background: grey
-
 }
+
 html, body {
    height: 100%;
    margin: 0;
    padding: 0;
  }
-#feed{
-  padding-left: 10em;
-  padding-right:10em;
 
+.circle {
+  width: 75px;
+  display: inline;
 }
+
+.left {
+  left: 15px;
+  clear: left;
+  margin-top: .5em;
+}
+
+#feed{
+  padding-left: 1em;
+  padding-right:1em;
+}
+
 .bottom-space{
   margin-bottom: 2em;
 }
@@ -49,8 +62,18 @@ nav div ul{
 #sidebar ul li{
   margin-top: .5em;
   display: inline;
-
 }
+
+span {
+  font-size: 1.2em;
+  font-weight: bold;
+  float: left;
+}
+
+.name {
+  margin-top: -1.2em;
+}
+
 svg{
   margin-left: .5em;
 }
