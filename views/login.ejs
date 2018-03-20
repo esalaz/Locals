@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- bootstrap css -->
-  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- materialize css -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <!-- bootstrap js -->
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- materialize js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
   <title>Locals</title>
 </head>
@@ -20,19 +20,20 @@
   <h1 class='title'>LOCALS</h1>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="center-align">
         <h2>Log In</h2>
         <br>
         <form method="POST" action="/login">
-          <div class="form-group">
+          <div class="col s10 offset-s1">
             <input type="email" name="username" class="form-control" placeholder="Email" autofocus>
           </div>
-          <div class="form-group">
+          <div class="col s10 offset-s1">
             <input type="password" name="password" class="form-control" placeholder="Password">
           </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-block btn-primary" value="Log In">
+          <div class="center-align">
+            <input type="submit" class="waves-effect waves-light btn" value="Log In">
           </div>
+          <br>
         </form>
       </div>
     </div>

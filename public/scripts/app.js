@@ -3,6 +3,7 @@ console.log('yoooo')
 //jQuery is required to run this code
 $( document ).ready(function() {
 
+
     scaleVideoContainer();
 
     initBannerVideoSize('.video-container .poster img');
@@ -16,6 +17,7 @@ $( document ).ready(function() {
         scaleBannerVideoSize('.video-container video');
     });
 
+    $('select').material_select();
 });
 
 function scaleVideoContainer() {

@@ -4,57 +4,59 @@
   <meta charset="UTF-8">
   <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- bootstrap css -->
-  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- materialize css -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <!-- bootstrap js -->
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- materialize js -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!-- APP.js -->
+  <script type="text/javascript" src='/scripts/app.js'></script>
+  
   <title>Locals</title>
 </head>
 <body>
   <h1 class='title'>LOCALS</h1>
-  <div class="container">
+  <div class="container center-align">
     <div class="row">
-      <div class="col-md-12">
         <h2>Sign Up</h2>
         <br>
         <form method="POST" action="/signup">
-          <div class="form-group">
+          <div class="col s10 offset-s1">
             <input type="text" name="name" class="form-control" placeholder="Name" autofocus>
           </div>
-          <div class="form-group">
+          <div class="col s10 offset-s1">
             <input type="email" name="username" class="form-control" placeholder="Email">
           </div>
-          <div class="form-group">
+          <div class="col s10 offset-s1">
             <input type="password" name="password" class="form-control" placeholder="Password">
           </div>
-          <div class="form-group">
-            <select class="form-control" name="isLocal">
+          <div class="col s10 offset-s1">
+            <select class="input-field" name="isLocal">
               <option value="Traveler">Traveler</option>
               <option value="Local">Local</option>
             </select>
           </div>
-          <div class="form-group">
+          <div class="col s10 offset-s1">
             <input type="number" name="age" class="form-control" placeholder="Age">
           </div>
-          <div class="form-group">
+          <div class="col s10 offset-s1">
             <input type="text" name="city" class="form-control" placeholder="City">
           </div>
-          <div class="form-group">
+          <div class="col s10 offset-s1">
             <input type="text" name="bio" class="form-control" placeholder="Bio">
           </div>
-          <div class="text-center mt-4">
-              <div class="file btn btn-sm">Upload<input type="file" name="file"/>
+          <div class="center-align">
+              <div class="file btn btn-sm"><input type="file" name="file"/>
               </div>
           </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-block btn-primary" value="Sign Up">
+          <div class="center-align">
+            <input type="submit" class="waves-effect waves-light btn" value="Sign Up">
           </div>
+          <br>
         </form>
-      </div>
     </div>
   </div>
 </body>

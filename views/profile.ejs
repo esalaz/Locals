@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- bootstrap css -->
-  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- materialize css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <!-- bootstrap js -->
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- materialize js -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <title>Locals</title>
 </head>
 <body>
   <h1 class='title'>LOCALS</h1>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col s10 offset-s1">
           <img src="<%= user.img %>" alt="">
           <div class="form-group">
                 Name: <span><%= user.name %></span>
@@ -39,17 +39,16 @@
             Bio: <span><%= user.bio %></span>
           </div>
           <form action="/user/<%= user._id %>/update" method="GET">
-            <div class="form-group">
-              <input type="submit" class="btn btn-block btn-primary" value="Edit">
+            <div class="center-align">
+              <input type="submit" class="waves-effect waves-light btn" value="Edit">
             </div>
           </form>
           <form action="/user/<%= user._id %>?_method=DELETE" method="POST">
-            <div class="form-group">
-              <input type="submit" class="btn btn-block btn-primary" value="DELETE">
+            <div class="center-align">
+              <input type="submit" class="waves-effect waves-light btn" value="DELETE">
             </div>
+            <br>
           </form>
-
-
       </div>
     </div>
   </div>
