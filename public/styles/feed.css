@@ -5,10 +5,11 @@ img{
   width: 50%;
 }
 
-header h1{
+.title {
   text-align: center;
   font-family: 'Kaushan Script', cursive;
 }
+
 #map {
   display:flex;
    height: 400px;
