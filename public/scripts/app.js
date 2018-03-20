@@ -3,7 +3,14 @@ console.log('yoooo')
 //jQuery is required to run this code
 $( document ).ready(function() {
     $('select').material_select();
-});
+    // $('.carousel').carousel()
+
+    // $('.carousel').carousel('next');
+    // $('.carousel').carousel('next', 3); // Move next n times.
+
+    // $('.carousel.carousel-slider').carousel({fullWidth: true});
+    $('.slider').slider();
+  });
 
 
 function openMe(inside) {

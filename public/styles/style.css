@@ -7,9 +7,17 @@
     color: black;
     background-color: transparent;
     text-align: center;
+    color: white;
 }
 .info{
-    text-align: center;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+/* Moves slider back */
+.slider, .fullscreen{
+  z-index: -1;
 }
 
 /*-------------------------------------------------------------------------
