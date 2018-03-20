@@ -32,7 +32,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(validate(app, i18n));
+app.use(validate());
 
 // Login system wont work without these
 passport.use(new LocalStrategy(User.authenticate()));
