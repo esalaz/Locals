@@ -35,42 +35,16 @@
                       Travelers will join awesome locals and tour your vaction spot together
                       <br>
                       Showing travelers a great time in many cities!
-                      </h4> 
+                      </h4>
                   </div>
-                      
-        <!-- LOGIN/SIGNUP FORM -->
-                    <div class="wrapper">
-                        <div class="tabs">
-                          <button onclick="openMe('first')" class="tab">Sign Up</button>
-                          <button onclick="openMe('second')" class="tab">Log In</button>
-                        </div>
-                        <div id="first" class="content form-group">
-                          <form class="signup form-group" action="/signup" method="post">
-                            <label for="">Email</label>
-                            <input class="input form-control" type="text" name="email" placeholder="Email">
-                            <label for="">Password</label>
-                            <input class="input form-control" type="text" name="password" placeholder="Password">
-                            <label for="">Confirm Password</label>
-                            <input class="input form-control" type="text" name="password" placeholder="Confirm Password">
-                            <label for="">Who are you?</label>
-                            <select class="select form-control" name="">
-                              <option value="Traveler">Traveler</option>
-                              <option value="Local">Local</option>
-                            </select>
-                            <input class="button btn btn-primary" type="button" name="Submit" value="Sign Up">
-                          </form>
-                        </div>
-                        <div id="second" class="content">
-                          <form class="login" action="/login" method="post">
-                            <label for="">Email</label>
-                            <input class="input form-control" type="text" name="email" placeholder="Email">
-                            <label for="">Password</label>
-                            <input class="input form-control" type="text" name="password" placeholder="Password">
-                            <input class="button btn btn-primary" type="button" name="Submit" value="Log In">
-                          </form>
-                        </div>
-                    </div>
 
+        <!-- SIGNUP FORM -->
+        <div class="forms-div">
+        <div class="flex">
+          <a href="/login" class="href"><div class="form-box">Log In</div></a>
+          <a href="/signup" class="href"><div class="form-box">Sign Up</div></a>
+        </div>
+        </div>
           <!-- COVERR VIDEO AND PICTURES -->
                         <div class="filter"></div>
                           <video autoplay loop class="fillWidth">
@@ -84,5 +58,3 @@
               </div>
     </body>
 </html>
-
-
