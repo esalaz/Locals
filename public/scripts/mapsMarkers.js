@@ -1,8 +1,9 @@
+
 console.log("ready?!");
 function initMap() {
 
   // Zoom restriction
-  var minZoomLevel = 10;
+  var minZoomLevel = 12;
 
   // Marker icons
   var markerIcons = {
@@ -14,6 +15,7 @@ function initMap() {
    var map = new google.maps.Map(document.getElementById('map'), {
      center: homeCity,
      zoom: minZoomLevel,
+     maxZoom: 14,
      gestureHandling: 'greedy'
    });
 
