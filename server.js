@@ -66,17 +66,16 @@ app.get('/feed', function(req, res) {
   })
 })
 
-// <% for (let user of users) { %>
-//   <a href="/user/<%= user._id%>"></a>
-//   <%= user.image %>
-//   <%= user.name %>
-//   <%= user.bio %>
-// <% } %>
-
-// Render Profile Page - this breaks my App
-// app.get('/user/:id', function(req, res) {
-//   res.render('profile')
-// })
+// See all users
+app.get('/all', function(req, res) {
+  User.find(function(err, allUsers) {
+    if (err) {
+      console.log("Error getting all Users: " +  err);
+    } else {
+      res.json({users: allUsers})
+    }
+  })
+})
 
 // SIGNUP WORKING
 app.post("/signup", function (req, res) {
@@ -102,12 +101,7 @@ app.post("/signup", function (req, res) {
   )
 });
 
-// CRUD Routes
-// GET '/users' shows all users. Not using
-// POST '/users' create a user. Used in '/signup'
-// GET 'users/:id' show one user. DONE
-// PUT 'users/:id' update one user. DONE
-// DELETE 'users/:id' delete one user
+// CRUD Routes - all functional
 
 // SHOW (user profile) - working
 app.get('/user/:id', function(req, res) {
@@ -130,7 +124,8 @@ app.get('/user/:id/update', function(req, res) {
     if (err) {
       console.log("Error: " + err);
     } else {
-      res.render('update_profile', {user: succ})
+      var req = req;
+      res.render('update_profile', {user: succ, req: req})
     }})
 })
 

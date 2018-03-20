@@ -20,7 +20,7 @@
     <div class="row">
 
       <div class="col s10 offset-s1">
-          <img src="<%= user.img %>" alt="">
+          <img src="/images/blank.jpg" alt="Profile Picture">
 
           <div class="form-group">
                 Name | <span><%= user.name %></span>
@@ -40,6 +40,7 @@
           <div class="form-group">
             Bio | <span><%= user.bio %></span>
           </div>
+
           <form action="/user/<%= user._id %>/update" method="GET">
 
             <div class="center-align">
@@ -49,18 +50,16 @@
           <form action="/user/<%= user._id %>?_method=DELETE" method="POST">
             <div class="center-align">
               <input type="submit" class="waves-effect waves-light btn" value="Delete Profile">
-
             </div>
             <br>
           </form>
+            <div class="center-align">
+              <input type="submit" class="waves-effect waves-light btn" value="Message <%= user.name %>">
+            </div>
+
       </div>
     </div>
   </div>
-
-
-
-
-
 
 
 

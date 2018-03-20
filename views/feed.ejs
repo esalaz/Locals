@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet" >
 <!-- My CSS!  -->
-    <link rel="stylesheet" href="../public/styles/feed.css">
+    <link rel="stylesheet" href="/styles/feed.css">
     <!-- Title -->
     <title>Local's Feed</title>
   </head>
   <body>
     <header>
       <div class="parallax-container first-parallax">
-        <div class="parallax"><img src="../public/images/fog1.jpeg"></div>
+        <div class="parallax"><img src="/images/fog1.jpeg"></div>
         <h1 class="title">Locals</h1>
       </div>
     </header>
@@ -29,7 +29,8 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="badges.html">Feed</a></li>
           <li><a href="collapsible.html">About</a></li>
-          <li><a href="mobile.html">Profile</a></li>
+          <li><a href="/user>">Profile</a></li>
+          <li><a href="/logout">Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="badges.html">Feed</a></li>
@@ -60,87 +61,38 @@
       <div class="input-field center-align container">
         <select class="icons">
           <option value="" disabled selected>Choose Location</option>
-          <option value="" data-icon="../public/images/img2.jpeg" class="right square">San Francisco</option>
-          <option value="" data-icon="../public/images/img2.jpeg" class="right rectangle">Berkely</option>
-          <option value="" data-icon="../public/images/img2.jpeg" class="right circle">Marin</option>
+          <option value="" data-icon="/images/img2.jpeg" class="right square">San Francisco</option>
+          <option value="" data-icon="/images/img2.jpeg" class="right rectangle">Berkely</option>
+          <option value="" data-icon="/images/img2.jpeg" class="right circle">Marin</option>
         </select>
       </div>
     </div>
     <div class="center-align">
+
       <h1 id="feedHeader">Meet the locals</h1>
       <div id="feed" class="container">
-        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 collapsible popout hey" data-collapsible="accordion" id='terrel'>
-          <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 collapsible popout " data-collapsible="accordion">
+          <% for (let user of users) { %>
+          <div class="card-panel grey lighten-5 z-depth-1 hey erric">
             <div class="row valign-wrapper">
               <div class="col s2">
-                <img src="../public/images/terrell.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
+                <img src="/images/blank.jpg" alt="placeholder" class="circle responsive-img">
               </div>
               <div class="col s10">
                 <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
+                <%= user.name %>
                 </span>
               </div>
             </div>
             <button data-toggle="collapse" data-target="#ex-content">View More</button>
-            <div id="ex-content" class="collapse">
-              Lorem ipsum dolor text....
+            <a href="/user/<%= user._id %>">View Profile</a>
+            <div class="collapse">
+              <%= user.bio %>
             </div>
           </div>
+           <% } %>
         </div>
-        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='hunter'>
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="../public/images/hunter.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
-              <div class="col s10">
-                <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-                </span>
-              </div>
-            </div>
-            <button data-toggle="collapse" data-target="#ex-content">View More</button>
-            <div id="ex-content" class="collapse">
-            Lorem ipsum dolor text....
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='erric'>
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="../public/images/erik.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
-              <div class="col s10">
-                <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-                </span>
-              </div>
-            </div>
-            <button data-toggle="collapse" data-target="#ex-content">View More</button>
-            <div id="ex-content" class="collapse">
-            Lorem ipsum dolor text....
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='okay'>
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="../public/images/hunter.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
-              <div class="col s10">
-                <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-                </span>
-              </div>
-            </div>
-            <button data-toggle="collapse" data-target="#ex-content">View More</button>
-            <div id="ex-content" class="collapse">
-              Lorem ipsum dolor text....
-            </div>
-          </div>
-        </div>
+
       </div>
 <!--PAGINATION  -->
       <div class= "center-align">
@@ -162,7 +114,7 @@
       </div>
     </div>
     <div class="parallax-container">
-      <div class="parallax"><img src="../public/images/img.jpeg"></div>
+      <div class="parallax"><img src="/images/img.jpeg"></div>
     </div>
 
 <!--FOOTER-->
@@ -211,8 +163,8 @@
 
 <!-- Script for google map markers -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
-    <script type="text/javascript" src="../public/scripts/mapsMarkers.js"></script>
-    <script type="text/javascript" src="../public/scripts/feedjQuery.js"></script>
+    <script type="text/javascript" src="/scripts/mapsMarkers.js"></script>
+    <script type="text/javascript" src="/scripts/feedjQuery.js"></script>
 
 
   </body>
