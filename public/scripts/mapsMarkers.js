@@ -14,7 +14,7 @@ function initMap() {
    var map = new google.maps.Map(document.getElementById('map'), {
      center: homeCity,
      zoom: minZoomLevel,
-     gestureHandling: 'cooperative'
+     gestureHandling: 'greedy'
    });
 
 
