@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Loading Google Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+<!-- Loading Materialize  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet" >
+<!-- My CSS!  -->
+    <link rel="stylesheet" href="../public/styles/feed.css">
+    <!-- Title -->
+    <title>Local's Feed</title>
+  </head>
+  <body>
+    <header>
+      <div class="parallax-container first-parallax">
+        <div class="parallax"><img src="../public/images/fog1.jpeg"></div>
+        <h1 class="title">Locals</h1>
+      </div>
+    </header>
+    <nav class="black accent-4">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Locals</a>
+        <a href="#" data-activities="mobile-demo" class="button-collapse"><i class="materiale-icons">Menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn">Feed</a></li>
+          <li><a class="waves-effect waves-light btn">About</a></li>
+          <li><a class="waves-effect waves-light btn">Profile</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Map!  -->
+    <div id="map" class="container"></div>
+    <script>
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNinrpdBf-Xvg6hIcY_iOF9QGyTDh4ncU&callback=initMap"
+    async defer></script>
+    <div class="row">
+      <aside id="sidebar"class="center-align">
+        <ul class="center hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn">Night<i class="fas fa-glass-martini"></i></a></li>
+          <li><a class="waves-effect waves-light btn">Outdoors<i class="material-icons right">cloud</i></a></li>
+          <li><a class="waves-effect waves-light btn">Dinning<i class="fas fa-utensils"></i></a></li>
+        </ul>
+      </aside>
+    </div>
+    <!--Location Selector  -->
+    <div class="row">
+      <div class="input-field center-align container">
+        <select class="icons">
+          <option value="" disabled selected>Choose Location</option>
+          <option value="" data-icon="../public/images/img2.jpeg" class="right square">San Francisco</option>
+          <option value="" data-icon="../public/images/img2.jpeg" class="right rectangle">Berkely</option>
+          <option value="" data-icon="../public/images/img2.jpeg" class="right circle">Marin</option>
+        </select>
+      </div>
+    </div>
+    <div class="center-align">
+      <h1 id="feedHeader">Meet the locals</h1>
+      <div id="feed" class="container">
+        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 collapsible popout hey" data-collapsible="accordion" id='terrel'>
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                <img src="../public/images/terrell.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+                </span>
+              </div>
+            </div>
+            <button data-toggle="collapse" data-target="#ex-content">View More</button>
+            <div id="ex-content" class="collapse">
+              Lorem ipsum dolor text....
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='hunter'>
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                <img src="../public/images/hunter.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+                </span>
+              </div>
+            </div>
+            <button data-toggle="collapse" data-target="#ex-content">View More</button>
+            <div id="ex-content" class="collapse">
+            Lorem ipsum dolor text....
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='erric'>
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                <img src="../public/images/erik.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+                </span>
+              </div>
+            </div>
+            <button data-toggle="collapse" data-target="#ex-content">View More</button>
+            <div id="ex-content" class="collapse">
+            Lorem ipsum dolor text....
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='okay'>
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                <img src="../public/images/hunter.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+                </span>
+              </div>
+            </div>
+            <button data-toggle="collapse" data-target="#ex-content">View More</button>
+            <div id="ex-content" class="collapse">
+              Lorem ipsum dolor text....
+            </div>
+          </div>
+        </div>
+      </div>
+<!--PAGINATION  -->
+      <div class= "center-align">
+        <ul class="pagination">
+          <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+          <li class="active"><a href="#!">1</a></li>
+          <li class="waves-effect"><a href="#!">2</a></li>
+          <li class="waves-effect"><a href="#!">3</a></li>
+          <li class="waves-effect"><a href="#!">4</a></li>
+          <li class="waves-effect"><a href="#!">5</a></li>
+          <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="section black">
+      <div class="row container">
+        <h2 class="header white-text">Meet The Team</h2>
+        <p class="white-text text-darken-3 lighten-3">Hi everyone! The idea behind this project has to do with...</p>
+      </div>
+    </div>
+    <div class="parallax-container">
+      <div class="parallax"><img src="../public/images/img.jpeg"></div>
+    </div>
+
+<!--FOOTER-->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <ul>
+              <li><a><i class="fab fa-twitter"></i></a></li>
+              <li><a><i class="fab fa-github"></i></a></li>
+              <li><a><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Learn More!</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">About Team</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+        <div class="footer-copyright">
+          <div class="container">
+            © 2018 Copyright T.H.E
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
+
+        <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+<!-- materialize-js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+<!-- Loading Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Loading Font-awesome css -->
+
+<!-- Script for google map markers -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script type="text/javascript" src="../public/scripts/mapsMarkers.js"></script>
+    <script type="text/javascript" src="../public/scripts/feedjQuery.js"></script>
+
+
+  </body>
+</html>
