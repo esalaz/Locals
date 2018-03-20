@@ -29,7 +29,8 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="badges.html">Feed</a></li>
           <li><a href="collapsible.html">About</a></li>
-          <li><a href="mobile.html">Profile</a></li>
+          <li><a href="/user>">Profile</a></li>
+          <li><a href="/logout">Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="badges.html">Feed</a></li>
@@ -67,78 +68,30 @@
       </div>
     </div>
     <div class="center-align">
+
       <h1 id="feedHeader">Meet the locals</h1>
       <div id="feed" class="container">
-        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 collapsible popout hey" data-collapsible="accordion" id='terrel'>
-          <div class="card-panel grey lighten-5 z-depth-1">
+
+        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 collapsible popout " data-collapsible="accordion">
+          <% for (let user of users) { %>
+          <div class="card-panel grey lighten-5 z-depth-1 hey erric">
             <div class="row valign-wrapper">
               <div class="col s2">
-                <img src="/images/terrell.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
+                <img src="/images/blank.jpg" alt="placeholder" class="circle responsive-img">
               </div>
               <div class="col s10">
                 <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
+                <%= user.name %>
                 </span>
               </div>
             </div>
             <button data-toggle="collapse" data-target="#ex-content">View More</button>
-            <div id="ex-content" class="collapse">
-              Lorem ipsum dolor text....
+            <a href="/user/<%= user._id %>">View Profile</a>
+            <div class="collapse">
+              <%= user.bio %>
             </div>
           </div>
-        </div>
-        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='hunter'>
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="/images/hunter.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
-              <div class="col s10">
-                <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-                </span>
-              </div>
-            </div>
-            <button data-toggle="collapse" data-target="#ex-content">View More</button>
-            <div id="ex-content" class="collapse">
-            Lorem ipsum dolor text....
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='erric'>
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="/images/erik.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
-              <div class="col s10">
-                <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-                </span>
-              </div>
-            </div>
-            <button data-toggle="collapse" data-target="#ex-content">View More</button>
-            <div id="ex-content" class="collapse">
-            Lorem ipsum dolor text....
-          </div>
-        </div>
-        <div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-5 hey" id='okay'>
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="/images/hunter.jpg" alt="placeholder" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
-              <div class="col s10">
-                <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-                </span>
-              </div>
-            </div>
-            <button data-toggle="collapse" data-target="#ex-content">View More</button>
-            <div id="ex-content" class="collapse">
-              Lorem ipsum dolor text....
-            </div>
-          </div>
+           <% } %>
         </div>
       </div>
 <!--PAGINATION  -->
