@@ -114,7 +114,8 @@ app.get('/user/:id', function(req, res) {
     if (err) {
       console.log("Error: " + err);
     } else {
-      res.render('profile', {user: succ})
+      console.log(userId + " " + succ._id);
+      res.render('profile', {user: succ, req: userId})
     }})
   })
 
@@ -127,7 +128,7 @@ app.get('/user/:id/update', function(req, res) {
       console.log("Error: " + err);
     } else {
       var req = req;
-      res.render('update_profile', {user: succ, req: req})
+      res.render('update_profile', {user: succ, req: userId})
     }})
 })
 
@@ -151,7 +152,7 @@ app.put('/user/:id', function(req, res) {
           console.log(err);
         } else {
           console.log('User is Saved: ' + updatedUserSaved);
-          res.render('profile', {user: updatedUserSaved})
+          res.render('profile', {user: updatedUserSaved, req: userId})
         }
       })
     }})
@@ -192,7 +193,7 @@ app.get("/logout", function (req, res) {
 });
 
 app.get("/message", function (req, res) {
-  res.render("messaging");
+  res.redirect("message");
 });
 
 // listen on port 3000

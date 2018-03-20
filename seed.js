@@ -51,9 +51,4 @@ var user=
 
       db.User.create(user3, function(err, succ) {
         console.log(succ);
-      })
-
-// Currently not working code for profile page (error is req is undefined)
-      // <% if (user._id === req.params.id) { %>
-      // <% } else { %>
-      //  <% } %>
+      });

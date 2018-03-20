@@ -40,23 +40,27 @@
           <div class="form-group">
             Bio | <span><%= user.bio %></span>
           </div>
-
+            <% if (user._id.toString() === req.toString()) { %>
           <form action="/user/<%= user._id %>/update" method="GET">
-
             <div class="center-align">
               <input type="submit" class="waves-effect waves-light btn" value="Edit">
             </div>
           </form>
+
           <form action="/user/<%= user._id %>?_method=DELETE" method="POST">
             <div class="center-align">
               <input type="submit" class="waves-effect waves-light btn" value="Delete Profile">
             </div>
             <br>
+            <% } else { %>
           </form>
             <div class="center-align">
-              <input type="submit" class="waves-effect waves-light btn" value="Message <%= user.name %>">
+              <form class="" action="/message" method="get">
+              <input action='' type="submit" class="waves-effect waves-light btn" value="Message <%= user.name %>">
+              </form>
             </div>
-
+            <br>
+              <% } %>
       </div>
     </div>
   </div>
