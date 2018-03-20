@@ -2,6 +2,8 @@ $(document).ready(function(){
 
     $('select').material_select();
     $('.parallax').parallax();
+    $(".button-collapse").sideNav();
+
       var erric={
         content:$('#erric'),
         position:$('#erric').offset().top
