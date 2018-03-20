@@ -97,6 +97,8 @@ app.post("/signup", function (req, res) {
 
 // SHOW (user profile) - working
 app.get('/user/:id', function(req, res) {
+  console.log(userId);
+  console.log(req.user);
   var userId = req.user._id;
   User.findById(userId, function(err, succ) {
     if (err) {
@@ -144,8 +146,9 @@ app.put('/user/:id', function(req, res) {
     }})
   })
 
-// DELETE - not working
-app.delete('/user/:id', function(res, req) {
+// DELETE - not working req.params is undefined. Maybe bc I'm rendering rathe than redirecting
+// Look at URLs for after login and signup
+app.delete('/user/:id', function(req, res) {
   console.log(req);
   User.findByIdAndRemove(req.params.id, function(err, deletedUser) {
     if (err) {
@@ -164,8 +167,7 @@ app.post("/login", passport.authenticate("local"), function (req, res) {
     console.log("Error is: " + err);
     console.log("Success is: " + succ);
     if(req.body.password === succ.password) {
-      // Redirect! This is likely why delete isn't working
-      res.render('profile', {user: succ})
+      res.redirect(`/user/${req.user._id}`);
     }
     else{
       res.sendStatus(404);
