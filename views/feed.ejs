@@ -22,8 +22,13 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="badges.html">Feed</a></li>
           <li><a href="collapsible.html">About</a></li>
-          <li><a href="/user>">Profile</a></li>
+          <% if (users == true) { %>
+          <li><a href="/user/<%= users._id %>">Profile</a></li>
           <li><a href="/logout">Log Out</a></li>
+          <% } else { %>
+            <li><a href="/signup>">Sign Up</a></li>
+            <li><a href="/login">Log In</a></li>
+            <% } %>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="badges.html">Feed</a></li>
