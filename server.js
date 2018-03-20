@@ -55,10 +55,23 @@ app.get("/login", function (req, res) {
   res.render("login");
 });
 
-// Render Map
+// Render Map & allow it to access User model to populate div
 app.get('/feed', function(req, res) {
-  res.render('feed')
+  User.find(function(err, allUsers) {
+    if (err) {
+      console.log("Error getting all Users: " +  err);
+    } else {
+      res.render('feed', {users: allUsers})
+    }
+  })
 })
+
+// <% for (let user of users) { %>
+//   <a href="/user/<%= user._id%>"></a>
+//   <%= user.image %>
+//   <%= user.name %>
+//   <%= user.bio %>
+// <% } %>
 
 // Render Profile Page - this breaks my App
 // app.get('/user/:id', function(req, res) {
