@@ -4,10 +4,9 @@
 
 .title{
     margin-top: 10%;
-    color: black;
     background-color: transparent;
     text-align: center;
-    color: white;
+    color: black;
 }
 .info{
   z-index: 1;
@@ -18,6 +17,10 @@
 /* Moves slider back */
 .slider, .fullscreen{
   z-index: -1;
+}
+
+.brand-logo {
+  font-family: 'Kaushan Script', cursive;
 }
 
 /*-------------------------------------------------------------------------

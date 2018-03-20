@@ -52,3 +52,11 @@ var user=
       db.User.create(user3, function(err, succ) {
         console.log(succ);
       });
+
+      // <% if (users == true) { %>
+      // <li><a href="/user/<%= users._id %>">Profile</a></li>
+      // <li><a href="/logout">Log Out</a></li>
+      // <% } else { %>
+      //   <li><a href="/signup">Sign Up</a></li>
+      //   <li><a href="/login">Log In</a></li>
+      //   <% } %>
