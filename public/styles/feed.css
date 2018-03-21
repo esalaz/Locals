@@ -99,4 +99,19 @@ svg{
      /* The alpha value allows the text and background color
      of the button to still show through. */
       background-color: white;
-    }
+}
+
+.page-footer{
+  background-color: #ff7043;
+}
+.btn{
+  background-color: #ef5350
+}
+
+.fa-github{
+  color: white;
+}
+
+.fa-github:hover{
+  color: #2bbbad;
+}
