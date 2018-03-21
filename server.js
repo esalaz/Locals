@@ -109,7 +109,7 @@ app.post("/signup", function (req, res) {
 app.get('/user/:id', function(req, res) {
   console.log(userId);
   console.log(req.user);
-  var userId = req.user._id;
+  var userId = req.params.id;
   User.findById(userId, function(err, succ) {
     if (err) {
       console.log("Error: " + err);
