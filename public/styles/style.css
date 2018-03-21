@@ -22,6 +22,26 @@ body {
   background-color: #FFF;
 }
 
+.flexbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.padding {
+  margin-right: 1em;
+}
+
+.userInfo {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.prof {
+  width: 300px;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
 .container {
   width: 600px;
   border-radius: 20px;

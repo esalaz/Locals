@@ -12,7 +12,7 @@ In comes Locals.
 
 Sign up as a traveler and find locals in the city you'll be in next. View their profile, message them to ensure they'll give you the experience you're looking for, and finally book them though our PayPal link.
 
-Or, sign up as a local and wait for a traveler to message you, and enjoy hanging out with new people.
+Or, sign up as a local and wait for a traveler to message you, and experience the city you know with a new crowd.
 
 # Heroku Link
 https://lit-brook-84330.herokuapp.com/
