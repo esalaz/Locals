@@ -109,8 +109,8 @@ app.post("/signup", function (req, res) {
 app.get('/user/:id', function(req, res) {
   console.log(userId);
   console.log(req.user);
-  var userId = req.user._id;
-  var Id = req.params.id;
+  var Id = req.user._id;
+  var userId = req.params.id;
   User.findById(userId, function(err, succ) {
     if (err) {
       console.log("Error: " + err);
@@ -122,8 +122,8 @@ app.get('/user/:id', function(req, res) {
 
 // UPDATE PAGE FOR USER PROFILE
 app.get('/user/:id/update', function(req, res) {
-  var userId = req.user._id;
-  var Id = req.params.id;
+  var Id = req.user._id;
+  var userId = req.params.id;
   console.log(userId);
   User.findById(userId, function(err, succ) {
     if (err) {
@@ -136,8 +136,8 @@ app.get('/user/:id/update', function(req, res) {
 // SAVE UPDATES FOR USER PROFILE
 app.put('/user/:id', function(req, res) {
   console.log("Hello, you just tried to update");
-  var userId = req.user._id;
-  var Id = req.params.id;
+  var Id = req.user._id;
+  var userId = req.params.id;
   User.findById(userId, function(err, foundUser) {
     if (err) {
       console.log("Error: " + err);
