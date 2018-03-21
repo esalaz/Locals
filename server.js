@@ -63,7 +63,16 @@ app.get('/feed', function(req, res) {
     if (err) {
       console.log("Error getting all Users: " +  err);
     } else {
-      res.render('feed', {users: allUsers})
+      console.log(req);
+      var Id = req.user._id;
+      User.findById(Id, function(err, succ) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.render('feed', {users: allUsers, user: succ})
+        }
+      })
+
     }
   })
 })

@@ -32,7 +32,7 @@
       <a href="#" data-activities="mobile-demo" class="button-collapse"><i class="materiale-icons">Menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href='/feed' class="waves-effect waves-light btn">Home</a></li>
-        <li><a href='' class="waves-effect waves-light btn">Profile</a></li>
+        <li><a href='/user/<%= id.toString() %>' class="waves-effect waves-light btn">Profile</a></li>
         <li><a href='/logout' class="waves-effect waves-light btn">Logout</a></li>
       </ul>
     </div>
@@ -60,12 +60,12 @@
           <div class="form-group">
             Bio: <span class="userInfo"><%= user.bio %></span>
           </div>
-          <br>
+          <!-- <br> -->
           <!-- ID of the logged in user -->
-          Logged in: <%= user._id %>
-          <br>
+          <!-- Logged in: <%= user._id %> -->
+          <!-- <br> -->
           <!-- ID of the parameter (any users profile) -->
-          Profile of: <%= id %>
+          <!-- Profile of: <%= id %> -->
             <% if (user._id.toString() == id.toString()) { %>
         <div class="flexbox">
           <form action="/user/<%= user._id %>/update" method="GET">
