@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
     $('select').material_select();
     $('.parallax').parallax();
     $(".button-collapse").sideNav();
@@ -40,4 +41,10 @@ $(document).ready(function(){
     }
 
   });
+
+      $('#aboutBtn').on('click', function(e){
+        $('html,body').animate({
+    scrollTop: $("#About").offset().top }, 1000)
+      });
+
 });

@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Loading Font-awesome css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
 <!-- Loading Google Fonts  -->
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 <!-- Loading Materialize  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet" >
-    <!-- Loading Font-awesome css --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <!-- My CSS!  -->
     <link rel="stylesheet" href="/styles/feed.css">
     <!-- Title -->
@@ -21,7 +22,7 @@
         <a href="#!" class="brand-logo title">Locals</a>
         <a href="#" data-activities="mobile-demo" class="button-collapse"><i class="materiale-icons">Menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="waves-effect waves-light btn">About</a></li>
+          <li><a id='aboutBtn' class="waves-effect waves-light btn">About</a></li>
           <li><a href='/feed' class="waves-effect waves-light btn">Home</a></li>
 
           <li><a href="/user/<%= users._id %>" class="waves-effect waves-light btn">Profile</a></li>
@@ -116,12 +117,14 @@
         </ul>
       </div>
     </div>
+  <div id="About">
     <div class="section black">
       <div class="row container">
         <h2 class="header white-text">Meet The Team</h2>
         <p class="white-text text-darken-3 lighten-3">Hi everyone! The idea behind this project has to do with...</p>
       </div>
     </div>
+  </div>
     <div class="parallax-container">
       <div class="parallax"><img src="/images/img.jpeg"></div>
     </div>
@@ -166,7 +169,7 @@
     <!-- Loading Font-awesome css -->
 
 <!-- Script for google map markers -->
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/scripts/mapsMarkers.js"></script>
     <script type="text/javascript" src="/scripts/feedjQuery.js"></script>
 
