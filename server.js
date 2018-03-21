@@ -109,26 +109,27 @@ app.post("/signup", function (req, res) {
 app.get('/user/:id', function(req, res) {
   console.log(userId);
   console.log(req.user);
-  var userId = req.params.id;
+  var userId = req.user._id;
+  var Id = req.params.id;
   User.findById(userId, function(err, succ) {
     if (err) {
       console.log("Error: " + err);
     } else {
       console.log(userId + " " + succ._id);
-      res.render('profile', {user: succ, req: userId})
+      res.render('profile', {user: succ, req: userId, id: Id})
     }})
   })
 
 // UPDATE PAGE FOR USER PROFILE
 app.get('/user/:id/update', function(req, res) {
   var userId = req.user._id;
+  var Id = req.params.id;
   console.log(userId);
   User.findById(userId, function(err, succ) {
     if (err) {
       console.log("Error: " + err);
     } else {
-    
-      res.render('update_profile', {user: succ, req: userId})
+      res.render('update_profile', {user: succ, req: userId, id: Id})
     }})
 })
 
@@ -136,6 +137,7 @@ app.get('/user/:id/update', function(req, res) {
 app.put('/user/:id', function(req, res) {
   console.log("Hello, you just tried to update");
   var userId = req.user._id;
+  var Id = req.params.id;
   User.findById(userId, function(err, foundUser) {
     if (err) {
       console.log("Error: " + err);
@@ -152,7 +154,7 @@ app.put('/user/:id', function(req, res) {
           console.log(err);
         } else {
           console.log('User is Saved: ' + updatedUserSaved);
-          res.render('profile', {user: updatedUserSaved, req: userId})
+          res.render('profile', {user: updatedUserSaved, req: userId, id: Id})
         }
       })
     }})
@@ -197,6 +199,6 @@ app.get("/message", function (req, res) {
 });
 
 // listen on port 3000
-app.listen(3000, function() {
+app.listen(process.env.PORT || 80, function() {
   console.log("server started");
 });
