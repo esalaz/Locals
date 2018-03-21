@@ -60,7 +60,13 @@
           <div class="form-group">
             Bio: <span class="userInfo"><%= user.bio %></span>
           </div>
-            <% if (user._id.toString() != req.toString()) { %>
+          <br>
+          <!-- ID of the logged in user -->
+          Logged in: <%= user._id %>
+          <br>
+          <!-- ID of the parameter (any users profile) -->
+          Profile of: <%= id %>
+            <% if (user._id == id) { %>
         <div class="flexbox">
           <form action="/user/<%= user._id %>/update" method="GET">
             <div class="center-align">
