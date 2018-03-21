@@ -33,30 +33,33 @@
     <div class="row">
 
       <div class="col s10 offset-s1">
-          <img src="/images/blank.jpg" alt="Profile Picture">
+          <img src="/images/blank.jpg" alt="Profile Picture" class="prof">
 
           <div class="form-group">
-                Name | <span><%= user.name %></span>
+                Name: <span class="userInfo"><%= user.name %></span>
           </div>
           <div class="form-group">
-                Email | <span><%= user.username %></span>
+                Email: <span class="userInfo"><%= user.username %></span>
           </div>
           <div class="form-group">
-              Local or Traveler | <span><%= user.isLocal %></span>
+              Local or Traveler: <span class="userInfo"><%= user.isLocal %></span>
           </div>
           <div class="form-group">
-            Age | <span><%= user.age %></span>
+            Age: <span class="userInfo"><%= user.age %></span>
           </div>
           <div class="form-group">
-              City | <span><%= user.city %></span>
+              City: <span class="userInfo"><%= user.city %></span>
           </div>
           <div class="form-group">
-            Bio | <span><%= user.bio %></span>
+            Bio: <span class="userInfo"><%= user.bio %></span>
           </div>
             <% if (user._id.toString() === req.toString()) { %>
+              <div class="flexbox">
+
+
           <form action="/user/<%= user._id %>/update" method="GET">
             <div class="center-align">
-              <input type="submit" class="waves-effect waves-light btn" value="Edit">
+              <input type="submit" class="waves-effect waves-light btn padding" value="Edit">
             </div>
           </form>
 
@@ -64,6 +67,7 @@
             <div class="center-align">
               <input type="submit" class="waves-effect waves-light btn" value="Delete Profile">
             </div>
+                </div>
             <br>
             <% } else { %>
           </form>
