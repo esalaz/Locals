@@ -22,6 +22,10 @@ body {
   background-color: #FFF;
 }
 
+.another {
+  padding-top: .27em;
+}
+
 .flexbox {
   display: flex;
   flex-direction: row;
