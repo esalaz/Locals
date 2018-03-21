@@ -25,6 +25,17 @@ body {
   font-family: 'Kaushan Script', cursive;
 }
 
+.page-footer{
+  background-color: #ff7043
+}
+
+.btn{
+  background-color: #ef5350
+}
+
+/*-------------------------------------------------------
+                    CARD STYLING
+---------------------------------------------------------*/
 .card{
   height: 300px;
   width: 400px;
@@ -44,4 +55,13 @@ body {
 
 .card .card-title{
   text-align: center;
+}
+
+/* FONT AWESOME ICON */
+.fa-github{
+  color: white;
+}
+
+.fa-github:hover{
+  color: #2bbbad;
 }

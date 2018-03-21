@@ -9,6 +9,10 @@
     color: black;
 }
 
+.btn{
+  background-color: #ef5350;
+}
+
 .brand-logo {
   font-family: 'Kaushan Script', cursive;
 }
