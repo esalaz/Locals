@@ -14,6 +14,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <!-- materialize js -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <link rel="stylesheet" href="/resources/demos/style.css">
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script>
+ $( function() {
+   $( "#datepicker" ).datepicker();
+ } );
+ </script>
   <title>Locals</title>
 </head>
 <body>
@@ -74,8 +83,11 @@
               <div class="flexbox">
             <div class="center-align">
               <form class="" action="/message" method="get">
-              <input action='' type="submit" class="waves-effect waves-light btn padding" value="Message <%= user.name %>">
+              <input action='' type="submit" class="waves-effect waves-light btn padding" value="Message Me">
               </form>
+            </div>
+            <div class="center-align">
+              <input type="submit" value="Schedule" id="datepicker" class="waves-effect waves-light btn padding">
             </div>
             <div>
               <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -85,9 +97,9 @@
               <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
               </form>
             </div>
-            <div class="center-align">
+            <!-- <div class="center-align">
               <a href='/feed' class="waves-effect waves-light btn">Back</a>
-            </div>
+            </div> -->
               </div>
               <br>
               <% } %>
