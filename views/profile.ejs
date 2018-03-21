@@ -35,9 +35,6 @@
       <div class="col s10 offset-s1">
           <img src="/images/blank.jpg" alt="Profile Picture" class="prof">
           <div class="form-group">
-                User Id: <span class="userInfo"><%= user._id %></span>
-          </div>
-          <div class="form-group">
                 Name: <span class="userInfo"><%= user.name %></span>
           </div>
           <div class="form-group">
@@ -55,10 +52,8 @@
           <div class="form-group">
             Bio: <span class="userInfo"><%= user.bio %></span>
           </div>
-            <% if (user._id.toString() === req.toString()) { %>
-              <div class="flexbox">
-
-
+            <% if (user._id.toString() != req.toString()) { %>
+        <div class="flexbox">
           <form action="/user/<%= user._id %>/update" method="GET">
             <div class="center-align">
               <input type="submit" class="waves-effect waves-light btn padding" value="Edit">
@@ -67,18 +62,34 @@
 
           <form action="/user/<%= user._id %>?_method=DELETE" method="POST">
             <div class="center-align">
-              <input type="submit" class="waves-effect waves-light btn" value="Delete Profile">
+              <input type="submit" class="waves-effect waves-light btn padding" value="Delete Profile">
             </div>
-                </div>
+            </form>
+            <div class="center-align">
+              <a href='/feed' class="waves-effect waves-light btn">Back</a>
+            </div>
+            </div>
             <br>
             <% } else { %>
-          </form>
+              <div class="flexbox">
             <div class="center-align">
               <form class="" action="/message" method="get">
-              <input action='' type="submit" class="waves-effect waves-light btn" value="Message <%= user.name %>">
+              <input action='' type="submit" class="waves-effect waves-light btn padding" value="Message <%= user.name %>">
               </form>
             </div>
-            <br>
+            <div>
+              <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYB2smOG06er36JjLmH46Fpa2eSvLjVpY8BYCix945P6xXraoBGVYe0XtfRtEEAdjc6PLtzKYRY+SP4b6MAkyQu23/csBnHCOMVyvcxXfOZEaY3YJw8g/Htcs8X8JmUBFp8yGESiWMnbXLoCJnV9enqhX+wWHXqcwxBb4yQSqS3qGjELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIeVseROh0znWAgZCjKMugMBeNpdK6xJGorBSZuibv/+WBX6oxxkCSjZ3MU3uSO/Ge+nTYmXQ/cJlfwoPCqpQa/aLgqTnYEycHyKAT47paCJVrT1AdMdzv/FN7vGcZkfC32fWWnLo54R4F+rzceUnyjYm3ODgpMQHQiIrZiuqROZ9IZn8Q3z0X3TUxAO/1t/k476v8E3Xd+z/ECA6gggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xODAzMjAwMjUyMDBaMCMGCSqGSIb3DQEJBDEWBBQtWnAHpQLZytyN48bU00wDmPkKtTANBgkqhkiG9w0BAQEFAASBgFlk2viIHdQJ5XA0UC+bJ74dDzhxDmW2km5ACiW5oZp1NbAJFtaZuLydl/H8cWfjXqOsWMz75TOCZEJ88XA/ANJfZf8dkefdVkPM90nt2tr4H+7OhItVZNRAcBnRGd1N8a5us1RR6xvy2SJHZhZO6uQZtKEeiBtM2T2LPUDVT1+H-----END PKCS7-----">
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" class="waves-effect waves-light btn padding">
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+              </form>
+            </div>
+            <div class="center-align">
+              <a href='/feed' class="waves-effect waves-light btn">Back</a>
+            </div>
+              </div>
+              <br>
               <% } %>
       </div>
     </div>

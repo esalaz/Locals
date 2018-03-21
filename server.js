@@ -193,7 +193,7 @@ app.get("/logout", function (req, res) {
 });
 
 app.get("/message", function (req, res) {
-  res.redirect("message");
+  res.render("message");
 });
 
 // listen on port 3000
