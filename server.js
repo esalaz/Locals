@@ -127,7 +127,7 @@ app.get('/user/:id/update', function(req, res) {
     if (err) {
       console.log("Error: " + err);
     } else {
-      var req = req;
+    
       res.render('update_profile', {user: succ, req: userId})
     }})
 })
