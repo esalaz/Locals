@@ -47,11 +47,12 @@ html, body {
   left: 15px;
   clear: left;
   margin-top: .5em;
+  padding-right: 1em;
 }
 
 #feed{
-  padding-left: 1em;
-  padding-right:1em;
+  padding-left: 3em;
+  padding-right:3em;
 }
 
 .bottom-space{
