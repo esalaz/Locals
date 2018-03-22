@@ -39,3 +39,6 @@ Pagination on feed.ejs
 Profile image uploading
 
 Full responsiveness
+
+## Cited Sources
+https://jqueryui.com/datepicker/
